@@ -1,36 +1,97 @@
 <template>
     <div class="temp">
         <!--图片轮播部分代码，从mint-ui组建中获取-->
-        <Lunbo></Lunbo>
+        <Lunbo :lunboData="msg"></Lunbo>
+
+        <!--九宫格添加-->
+        <div class="mui-content">
+            <ul class="mui-table-view mui-grid-view mui-grid-9">
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="#">
+                        <span class="mui-icon mui-icon-home"></span>
+                        <div class="mui-media-body">新闻资讯</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="#">
+                        <span class="mui-icon mui-icon-email"></span>
+                        <div class="mui-media-body">图片分享</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="#">
+                        <span class="mui-icon mui-icon-chatbubble"></span>
+                        <div class="mui-media-body">商品购买</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="#">
+                        <span class="mui-icon mui-icon-location"></span>
+                        <div class="mui-media-body">留言反馈</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="#">
+                        <span class="mui-icon mui-icon-search"></span>
+                        <div class="mui-media-body">视频专区</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="#">
+                        <span class="mui-icon mui-icon-phone"></span>
+                        <div class="mui-media-body">联系我们</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
 <style scoped>
-    .mint-swipe {
-        height: 200px;
-        color: #fff;
-        font-size: 30px;
-        text-align: center;
-        margin-bottom: 20px;
+    .mui-icon-home:before,
+    .mui-icon-email:before,
+    .mui-icon-chatbubble:before,
+    .mui-icon-location:before,
+    .mui-icon-search:before,
+    .mui-icon-phone:before{
+        content: " ";
     }
-
-    .mint-swipe-item {
-        line-height: 200px;
+    .mui-icon {
+        width: 40px;
+        height: 40px;
     }
-
-    .slide1 {
-        background-color: #0089dc;
-        color: #fff;
+    .mui-grid-view.mui-grid-9{
+        background-color: #fff;
     }
-
-    .slide2 {
-        background-color: #ffd705;
-        color: #000;
+    .mui-icon-home{
+        background-image: url("../../images/news.png");
+        /*设置环绕*/
+        background-repeat: round;
     }
-
-    .slide3 {
-        background-color: #ff2d4b;
-        color: #fff;
+    .mui-icon-email{
+        background-image: url("../../images/picShare.png");
+        /*设置环绕*/
+        background-repeat: round;
+    }
+    .mui-icon-chatbubble{
+        background-image: url("../../images/goodShow.png");
+        /*设置环绕*/
+        background-repeat: round;
+    }
+    .mui-icon-location{
+        background-image: url("../../images/feedback.png");
+        /*设置环绕*/
+        background-repeat: round;
+    }
+    .mui-icon-search{
+        background-image: url("../../images/search.png");
+        /*设置环绕*/
+        background-repeat: round;
+    }
+    .mui-icon-phone{
+        background-image: url("../../images/callme.png");
+        /*设置环绕*/
+        background-repeat: round;
     }
 </style>
 
@@ -39,6 +100,7 @@
     import common from '../../tool/Common'
 
     import Lunbo from '../sub/Lunvo.vue'
+
     export default {
         data() {
             return {
@@ -55,7 +117,7 @@
                 ]
             }
         },
-        components:{
+        components: {
             Lunbo
         },
         created() {
