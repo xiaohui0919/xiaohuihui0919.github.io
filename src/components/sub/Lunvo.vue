@@ -1,7 +1,11 @@
 <template>
     <div class="temp">
         <!--图片轮播部分代码，从mint-ui组建中获取-->
-        <Lunbo></Lunbo>
+        <mt-swipe :auto="4000">
+            <mt-swipe-item class="slide2" v-for="(item,index) in msg" :key="index">
+                {{ item.img }}
+            </mt-swipe-item>
+        </mt-swipe>
     </div>
 </template>
 
@@ -38,7 +42,6 @@
     // 导入工具类
     import common from '../../tool/Common'
 
-    import Lunbo from '../sub/Lunvo.vue'
     export default {
         data() {
             return {
@@ -54,9 +57,6 @@
                     }
                 ]
             }
-        },
-        components:{
-            Lunbo
         },
         created() {
 //            this.getLunboData()

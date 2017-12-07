@@ -17,6 +17,10 @@ import './root.css'
 import VueRouer from 'vue-router'
 Vue.use(VueRouer)
 
+// 添加vue-resource框架
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
+
 // 引入自定义组件
 import Home from './components/Home/Home.vue'
 import Member from './components/Member.vue'
